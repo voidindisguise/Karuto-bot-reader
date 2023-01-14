@@ -1,5 +1,6 @@
 
 import re
+import os
 import discord
 from discord.ext import commands
 
@@ -23,4 +24,4 @@ async def on_message(message):
             await message.channel.send(final_msg)
     
 
-bot.run("MTA2MzQ5MjkwOTI1MDM5NjI2MQ.Gzkf5O.4F_h8HtTQqm61xG8Pr4b7NAImf1haTMMhJPlSA")
+bot.run(os.env.get("BOT_TOKEN"))
