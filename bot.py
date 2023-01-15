@@ -99,9 +99,8 @@ class DiscordClient(commands.Bot):
         
 
     async def on_reaction_add(self, reaction, user):
-        if (reaction == self.reactionToBeAdded and user.id == 646937666251915264) and (reaction.channel.id == self.channelIdActiveIn and DiscordClient.canPickup[self.botGroupName][self.botIdInGroup]):
-            print(reaction)
-            await asyncio.sleep(1)
+        if (reaction.emoji == self.reactionToBeAdded and user.id == 646937666251915264) and (reaction.message.channel.id == self.channelIdActiveIn and DiscordClient.canPickup[self.botGroupName][self.botIdInGroup]):
+            await asyncio.sleep(2)
             await reaction.message.add_reaction(self.reactionToBeAdded)
             DiscordClient.UpdateLastPickupTime(self.botGroupName, self.botIdInGroup)
             DiscordClient.UpdateCanPickup(self.botGroupName, self.botIdInGroup)

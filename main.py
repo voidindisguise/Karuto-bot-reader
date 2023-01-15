@@ -10,6 +10,11 @@ async def ClientLogin(clients):
      
 async def WrappedConnect(_client):
     try:
+        await _client.client.close()
+        await _client.client.clear()
+    except:
+        pass
+    try:
         await _client.client.connect()
     except Exception as e:
         await _client.client.close()
@@ -25,9 +30,9 @@ if __name__ == '__main__':
     clientsTuple = namedtuple('ClientsTuple', ['client', 'event', 'token'])
 
     clients = [
-        clientsTuple(client=DiscordClient("1️⃣", 'group1', 0, 1057586818259890200), event=asyncio.Event(), token="MzU1MjcwNDk2NTExODUyNTc2.GvJh_v.P9UxlbwAIu19g0HnyL10hG8AjE4J3aJKXS24MY"),
-        clientsTuple(client=DiscordClient("2️⃣", 'group1', 1, 1057586818259890200), event=asyncio.Event(), token="MzkyOTEyNjQ4NzE2NjgxMjE4.G23c7y.7Lavtb2_XeDiW6BaBAiCRcMNWSfpHxSrEcBuUc"),
-        clientsTuple(client=DiscordClient("3️⃣", 'group1', 2, 1057586818259890200), event=asyncio.Event(), token="MzE4NTAyNzA4ODk2MjAyNzUy.GFc7a5.QDATkX5OMYqQgS_k9oOW11vaIPqCaOxjbL9UHw"),
+        clientsTuple(client=DiscordClient("1️⃣", 'group1', 2, 1057586818259890200), event=asyncio.Event(), token="Mjk0Nzg2NTQ2MTgyMzg5NzYw.Gab33r.sLYu351EaLTrR1gklVmRG7zJsd_3n9KFw2OBG4"),
+        clientsTuple(client=DiscordClient("2️⃣", 'group1', 1, 1057586818259890200), event=asyncio.Event(), token="MzAxODU2MTU0MzMyNjkyNDgw.G-QYIv.iNk3cieAhzoMpEcFl84f6cKSbU_ML9Rh5Qcey8"),
+        clientsTuple(client=DiscordClient("3️⃣", 'group1', 0, 1057586818259890200), event=asyncio.Event(), token="MzE4NTAyNzA4ODk2MjAyNzUy.GFc7a5.QDATkX5OMYqQgS_k9oOW11vaIPqCaOxjbL9UHw"),
     ]
     
     pickupDropTimes = datastoreutils.GetData(['group1'])
