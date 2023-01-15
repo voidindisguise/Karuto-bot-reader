@@ -24,9 +24,9 @@ if __name__ == '__main__':
     clientsTuple = namedtuple('ClientsTuple', ['client', 'event', 'token'])
 
     clients = [
-        clientsTuple(client=DiscordClient(), event=asyncio.Event(), token="MzAxODU2MTU0MzMyNjkyNDgw.G-QYIv.iNk3cieAhzoMpEcFl84f6cKSbU_ML9Rh5Qcey8"),
-        clientsTuple(client=DiscordClient(), event=asyncio.Event(), token="MzQ5NzQ4NDcxMjgyMDA4MDc0.GP2Fc4.2JL9ebzZHX0oCBp5cOlsEKNz_eMzOlLTsml33s"),
-        clientsTuple(client=DiscordClient(), event=asyncio.Event(), token="MzQ3NDEyNjc2OTgyNDcyNzA1.GeV7iP.ccmR40sn9Kq_L0r4gif-NRSG3C6t6rqxDzPq1g"),
+        clientsTuple(client=DiscordClient("1️⃣", 'group1', 0, 1057586818259890200), event=asyncio.Event(), token="MzAxODU2MTU0MzMyNjkyNDgw.G-QYIv.iNk3cieAhzoMpEcFl84f6cKSbU_ML9Rh5Qcey8"),
+        clientsTuple(client=DiscordClient("2️⃣", 'group1', 1, 1057586818259890200), event=asyncio.Event(), token="MzQ5NzQ4NDcxMjgyMDA4MDc0.GP2Fc4.2JL9ebzZHX0oCBp5cOlsEKNz_eMzOlLTsml33s"),
+        clientsTuple(client=DiscordClient("3️⃣", 'group1', 2, 1057586818259890200), event=asyncio.Event(), token="MzQ3NDEyNjc2OTgyNDcyNzA1.GeV7iP.ccmR40sn9Kq_L0r4gif-NRSG3C6t6rqxDzPq1g"),
     ]
 
     loop = asyncio.get_event_loop()
