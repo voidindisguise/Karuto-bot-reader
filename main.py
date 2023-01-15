@@ -30,9 +30,9 @@ if __name__ == '__main__':
     clientsTuple = namedtuple('ClientsTuple', ['client', 'event', 'token'])
 
     clients = [
-        clientsTuple(client=DiscordClient("1️⃣", 'group1', 2, 1057586818259890200), event=asyncio.Event(), token="Mjk0Nzg2NTQ2MTgyMzg5NzYw.Gab33r.sLYu351EaLTrR1gklVmRG7zJsd_3n9KFw2OBG4"),
+        clientsTuple(client=DiscordClient("1️⃣", 'group1', 0, 1057586818259890200), event=asyncio.Event(), token="Mjk0Nzg2NTQ2MTgyMzg5NzYw.Gab33r.sLYu351EaLTrR1gklVmRG7zJsd_3n9KFw2OBG4"),
         clientsTuple(client=DiscordClient("2️⃣", 'group1', 1, 1057586818259890200), event=asyncio.Event(), token="MzAxODU2MTU0MzMyNjkyNDgw.G-QYIv.iNk3cieAhzoMpEcFl84f6cKSbU_ML9Rh5Qcey8"),
-        clientsTuple(client=DiscordClient("3️⃣", 'group1', 0, 1057586818259890200), event=asyncio.Event(), token="MzE4NTAyNzA4ODk2MjAyNzUy.GFc7a5.QDATkX5OMYqQgS_k9oOW11vaIPqCaOxjbL9UHw"),
+        clientsTuple(client=DiscordClient("3️⃣", 'group1', 2, 1057586818259890200), event=asyncio.Event(), token="MzE4NTAyNzA4ODk2MjAyNzUy.GFc7a5.QDATkX5OMYqQgS_k9oOW11vaIPqCaOxjbL9UHw"),
     ]
     
     pickupDropTimes = datastoreutils.GetData(['group1'])
