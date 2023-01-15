@@ -2,6 +2,7 @@ import asyncio
 import discord
 from collections import namedtuple
 from bot import DiscordClient
+import datastoreutils
 
 async def ClientLogin(clients):
     for _client in clients:
@@ -24,10 +25,15 @@ if __name__ == '__main__':
     clientsTuple = namedtuple('ClientsTuple', ['client', 'event', 'token'])
 
     clients = [
-        clientsTuple(client=DiscordClient("1️⃣", 'group1', 0, 1057586818259890200), event=asyncio.Event(), token="MzAxODU2MTU0MzMyNjkyNDgw.G-QYIv.iNk3cieAhzoMpEcFl84f6cKSbU_ML9Rh5Qcey8"),
-        clientsTuple(client=DiscordClient("2️⃣", 'group1', 1, 1057586818259890200), event=asyncio.Event(), token="MzQ5NzQ4NDcxMjgyMDA4MDc0.GP2Fc4.2JL9ebzZHX0oCBp5cOlsEKNz_eMzOlLTsml33s"),
-        clientsTuple(client=DiscordClient("3️⃣", 'group1', 2, 1057586818259890200), event=asyncio.Event(), token="MzQ3NDEyNjc2OTgyNDcyNzA1.GeV7iP.ccmR40sn9Kq_L0r4gif-NRSG3C6t6rqxDzPq1g"),
+        clientsTuple(client=DiscordClient("1️⃣", 'group1', 0, 1057586818259890200), event=asyncio.Event(), token="MzU1MjcwNDk2NTExODUyNTc2.GvJh_v.P9UxlbwAIu19g0HnyL10hG8AjE4J3aJKXS24MY"),
+        clientsTuple(client=DiscordClient("2️⃣", 'group1', 1, 1057586818259890200), event=asyncio.Event(), token="MzkyOTEyNjQ4NzE2NjgxMjE4.G23c7y.7Lavtb2_XeDiW6BaBAiCRcMNWSfpHxSrEcBuUc"),
+        clientsTuple(client=DiscordClient("3️⃣", 'group1', 2, 1057586818259890200), event=asyncio.Event(), token="MzE4NTAyNzA4ODk2MjAyNzUy.GFc7a5.QDATkX5OMYqQgS_k9oOW11vaIPqCaOxjbL9UHw"),
     ]
+    
+    pickupDropTimes = datastoreutils.GetData(['group1'])
+    
+    DiscordClient.lastDropTime = pickupDropTimes['lastDropTime']
+    DiscordClient.lastPickupTime = pickupDropTimes['lastPickupTime']
 
     loop = asyncio.get_event_loop()
     loop.run_until_complete(ClientLogin(clients))
