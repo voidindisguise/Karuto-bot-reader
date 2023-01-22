@@ -1,9 +1,6 @@
 import asyncio
-import discord
 from collections import namedtuple
 from bot import DiscordClient
-import datastoreutils
-import math
 import datetime
 from utils import GetValidTokens
 

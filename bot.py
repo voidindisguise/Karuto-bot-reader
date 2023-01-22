@@ -2,7 +2,6 @@ import requests
 from discord.ext import commands
 import datetime
 import asyncio
-import datastoreutils
 import random
 import DataStore.mongodbreaderwriter as mongodbreaderwriter
 
