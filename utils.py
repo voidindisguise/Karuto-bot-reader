@@ -15,7 +15,7 @@ def GetValidTokens(validGroups):
     for group in tokens:
         validGroups[group['id']] = {
             "tokens": [],
-            "channelId": group['channelId']
+            "channelId": int(group['channelId'])
         }
         for token in group['tokens']:
             loop = asyncio.get_event_loop()
